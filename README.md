@@ -199,6 +199,8 @@ Geocoder::Lookup.get(:nominatim).query_rul(Geocoder::Query.new("..."))
 
 Geocoder::Lookup.get(:nominatim).send(:fetch_raw_data, Geocoder::Query.new("..."))
 
+City.near("Omaha, NE", 20, select: "cities.*, venues.*").joins(:venues)
+Hotel.near("London, UK", 50).joins(:administrator).preload(:administrator)
 ```
 
 ```
